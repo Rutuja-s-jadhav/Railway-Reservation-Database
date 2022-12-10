@@ -1,0 +1,87 @@
+﻿@model IEnumerable<Railway_Reservation.Models.Reservation>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.TrainDetails.TrainName)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.User.FirstName)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Res_Name)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Res_Gender)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Res_Address)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.QuotaType)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Res_Date)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.PNR_NO)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Seat_No)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Transaction_Id)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.TrainDetails.TrainName)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.User.FirstName)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Res_Name)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Res_Gender)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Res_Address)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.QuotaType)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Res_Date)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.PNR_NO)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Seat_No)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Transaction_Id)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.Res_Id }) |
+            @Html.ActionLink("Details", "Details", new { id=item.Res_Id }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.Res_Id })
+        </td>
+    </tr>
+}
+
+</table>
